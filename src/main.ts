@@ -28,10 +28,10 @@ async function bootstrap(): Promise<void> {
     SwaggerModule.setup(swagger_url, app, document);
 
   }
-  await app.listen(port, host, () => {
+  await app.listen(3000, host, () => {
     console.log(`Server is running http://${host}:${port}/`);
     if (swagger_url) {
-      console.log(`Swagger is running http://${host}:${port}/${swagger_url}`);
+      console.log(`Swagger is running http://${host}:${3000}/${swagger_url}`);
     }
   });
 }
