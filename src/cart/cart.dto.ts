@@ -1,16 +1,8 @@
 import { IsOptional } from 'class-validator';
 import { ApiModelProperty } from '@nestjs/swagger';
+import { CartItemInterface } from 'src/cart-item/cartItem.model';
 export class CartDto {
     @IsOptional()
-    @ApiModelProperty({ required: true })
-    readonly name: string;
-    @IsOptional()
-    @ApiModelProperty({ required: true })
-    readonly price: number;
-    @IsOptional()
-    @ApiModelProperty({ required: true })
-    readonly category: string;
-    @IsOptional()
-    @ApiModelProperty({ required: false })
-    readonly description: string;
+    @ApiModelProperty({ required: false, type: String })
+    readonly cartItemId: CartItemInterface['_id'];
 }

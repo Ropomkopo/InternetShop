@@ -11,8 +11,8 @@ export class UserController {
       private readonly userService: UserService,
   ) {}
   @Post()
-  async editUser(@Req() request: Request, @Res() res: Response, @Body() productData: UserDto): Promise<any> {
-    const responseData = await this.userService.create(productData);
+  async editUser(@Res() res: Response, @Body() userData: UserDto): Promise<any> {
+    const responseData = await this.userService.create(userData);
     res.status(200).json(responseData);
   }
   @Get()
